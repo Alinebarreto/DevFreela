@@ -14,7 +14,6 @@ namespace DevFreela.Application.Queries.GetAllSkills
 {
     public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillViewModel>>
     {
-        
         private readonly string _connectionString;
         public GetAllSkillsQueryHandler(IConfiguration configuration)
         {
@@ -26,22 +25,22 @@ namespace DevFreela.Application.Queries.GetAllSkills
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 sqlConnection.Open();
+
                 var script = "SELECT Id, Description FROM Skills";
 
                 var skills = await sqlConnection.QueryAsync<SkillViewModel>(script);
 
-                skills.ToList();
+                return skills.ToList();
             }
 
             // COM EF CORE
-            //    var skills = _dbContext.Skills;
+            //var skills = _dbContext.Skills;
 
-            //    var skillsViewModel = skills
-            //        .Select(s => new SkillViewModel(s.Id, s.Description))
-            //        .ToList();
+            //var skillsViewModel = skills
+            //    .Select(s => new SkillViewModel(s.Id, s.Description))
+            //    .ToList();
 
-            //    return skillsViewModel;
-            //}
+            //return skillsViewModel;
         }
     }
 }
