@@ -1,6 +1,6 @@
 ﻿using DevFreela.Application.ViewModels;
 using MediatR;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Collections.Generic;
 
 namespace DevFreela.Application.Queries.GetAllProjects
 {

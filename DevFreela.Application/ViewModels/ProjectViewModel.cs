@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DevFreela.Application.ViewModels
 {
@@ -10,9 +8,9 @@ namespace DevFreela.Application.ViewModels
     {
         public ProjectViewModel(int id, string title, DateTime createdAt)
         {
+            Id = id;
             Title = title;
             CreatedAt = createdAt;
-            Id = id;
         }
 
         public int Id { get; private set; }

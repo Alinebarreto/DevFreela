@@ -1,5 +1,4 @@
 ﻿using DevFreela.Core.Entities;
-
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -9,7 +8,7 @@ namespace DevFreela.Infrastructure.Persistence
     {
         public DevFreelaDbContext(DbContextOptions<DevFreelaDbContext> options) : base(options)
         {
-
+            
         }
 
         public DbSet<Project> Projects { get; set; }
@@ -24,14 +23,3 @@ namespace DevFreela.Infrastructure.Persistence
         }
     }
 }
-
-//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            optionsBuilder.UseSqlServer(@"Server=(localdb)\\MSSQLLocalDB;Initial Catalog=DevFreela;Integrated Security=True;Encrypt=False;Trust Server Certificate=False;Multi Subnet Failover=False");
-
-//            //optionsBuilder.UseSqlServer(@"Server = DESKTOP - 12345\\SQLEXPRESS; Database = DevFreela; Integrated Security = True; trustServerCertificate = true");
-
-//        }
-
-//    }
-//}
